@@ -202,15 +202,6 @@ function arr($products){
                 if($gk1['id']== 'PR003'){
                     unset($gk1); 
                     continue;
-  
-                    // Print modified array
-                    // var_dump($arr1);
-                      
-                    // Re-index the array elements
-                    // $arr2 = array_values($products);
-                      
-                    // Print re-indexed array
-                    // var_dump($arr2);
                  }
              print_r( '<br><tr><td>'.$key.'</td><td>'.$fk.'</td> <td>  '.$gk1['id']."</td> <td>".$gk1['name']."</td><td>".$gk1['brand'].'</td></tr>');
 
@@ -220,23 +211,38 @@ function arr($products){
          }
 
      }
-       
-
-
-
-// $arr1 = array(
-  
-//     'geeks', // [0]
-//     'for', // [1]
-//     'geeks' // [2]
-  
-// );
-  
-// remove item at index 1 which is 'for'
 
 ?>
 </table>
-    
+<table width="400px" cellspacing="0px" cellpadding="0px" border="1px">
+
+<?php 
+   
+    echo  "<th>Categories</th><th>subCategories</th><th>id</th><th>Name</th><th>brand</th>";
+   
+     foreach($products as $key => $value){
+
+             // print_r("<pre>".$key.'=>'.$value.'</pre>');
+         foreach($value as $fk => $fk1){
+             // echo $fk;
+             foreach($fk1 as $gk => $gk1){
+                if($gk1['id']== 'PR002'){
+                    // array_replace($gk1['name'], 'BIG-555')
+                    // print_r('hh');
+                    $gk1['name'] = 'BIG-555';
+                    // continue;
+                 }
+             print_r( '<br><tr><td>'.$key.'</td><td>'.$fk.'</td> <td>  '.$gk1['id']."</td> <td>".$gk1['name']."</td><td>".$gk1['brand'].'</td></tr>');
+
+
+             }
+
+         }
+
+     }
+
+?>
+</table>
     
 </body>
 </html>
