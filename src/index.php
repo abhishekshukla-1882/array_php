@@ -144,6 +144,25 @@ function arr($products){
     // arr();
           ?>
   </table>
+  <table width="400px" cellspacing="0px" cellpadding="0px" border="1px">
+  <?php
+  echo  "<th>subCategories</th><th>id</th><th>Name</th><th>brand</th>";
+      
+      foreach($products as $key => $value){
+
+              // print_r("<pre>".$key.'=>'.$value.'</pre>');
+          foreach($value as $fk => $fk1){
+              // echo $fk;
+              foreach($fk1 as $gk => $gk1){
+                  if($fk == 'Mobile'){
+                    print_r( '<br><tr><td>'.$fk.'</td> <td>  '.$gk1['id']."</td> <td>".$gk1['name']."</td><td>".$gk1['brand'].'</td></tr>');
+                }
+              }
+          }
+
+      }
+ ?>
+  </table>
     
     
 </body>
